@@ -25,7 +25,9 @@ define([
 
 	//remove initial build class (only present on first pageshow)
 	function hideRenderingClass() {
-		$html.removeClass( "ui-mobile-rendering" );
+     if ( $html.hasClass( "ui-mobile-rendering" ) ) {
+       $html.removeClass( "ui-mobile-rendering" );
+     }
 	}
 
 	// trigger mobileinit event - useful hook for configuring $.mobile settings before they're used
